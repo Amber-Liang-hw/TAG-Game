@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        
+        <script src="js/socket.io.js"></script>
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Tag</title>
+    </head>
+    <body>
+        
+        <div class="page-start">
+            <div class="logo">TAG</div>
+            <div class="form-group">
+                <input type="text" placeholder="Please enter IP address" id="ipInput"/>
+                <button type="submit" id="ipButton">Submit</button>
+            </div>
+            <div id="note">Friendly notice: one round only for three players</div>
+            <div class="role-choose">I wanna be</div>
+            <div class="chaser">Chaser</div>
+            <div class="Runner"><a>Runner</a></div>
+            
+        </div>
+
+        <div class="page-game">
+            <div class="countdown">01:00</div>
+
+            <div class="move-ball">
+                <div id="noticeWaitting">Waitting for the partner:)</div>
+                <div id="result"></div>
+                <button id = "resultConfirm">Got it</button>
+                <div class="ownDot"></div>
+                <div id="p1" class="ownDot" ></div>
+                <div id="p2" class="ownDot"></div>
+            </div>
+
+            <div class="direction">
+                <div class="up"><img class="up-icon" src="./img/icon-up.png" alt=""></div>
+                <div class="rl">              
+                    <div class="left"><img class="up-icon" src="./img/icon-left.png" alt=""></div>
+                    <div class="right"><img class="up-icon" src="./img/icon-right.png" alt=""></div>
+                </div>
+                <div class="down"><img class="up-icon" src="./img/icon-down.png" alt=""></div>
+            </div>
+            
+            
+        </div>
+        
+        <script src="cordova.js"></script>
+        <!-- <script src="js/rxjs.umd.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="https://cdn.bootcss.com/rxjs/6.0.0-alpha.3/Rx.min.js"></script>
+        <script src="js/client.js"></script>
+    </body>
+</html>
